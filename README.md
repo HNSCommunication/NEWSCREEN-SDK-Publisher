@@ -10,7 +10,7 @@
 
 ### 1. 설정
 
-#### `newscreen_sdk_.zip` 파일을 다운로드 합니다
+#### [`newscreen_sdk_.zip`](https://github.com/HNSCommunication/docs/raw/master/newscreen_sdk_1.0.zip) 파일을 다운로드 합니다
 - newscreen_.jar : 뉴스크린 jar 파일
 - AndroidManifest.xml : 뉴스크린 메니페스트 샘플파일
 - newscreen_activity.xml : 뉴스크린 레이아웃 파일

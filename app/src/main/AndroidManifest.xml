@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.hnscom.newscreen_sample">
+
+    <!--S:NEWSCREEN 퍼미션 설정  -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_SERVICE" />
+    <!--E:NEWSCREEN 퍼미션 설정  -->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/mobile_ads"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="theme, icon, label"
+        >
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--S: NEWSCREEN 설정 사항 -->
+        <activity
+            android:name="com.hnscom.hns_endad.AD.HNSADWebViewActivity"
+            android:launchMode="singleTask">
+        </activity>
+        <activity android:name="com.hnscom.hns_endad.AD.HNSAvoidPatternActivity" />
+        <service android:name="com.hnscom.hns_endad.Service.HNSEndADService"/>
+        <service android:exported="false" android:name="com.hnscom.hns_endad.Service.HNSForeGroundService" android:process=":locker" />
+        <receiver
+            android:name="com.hnscom.hns_endad.Service.HNSRestartService"
+            android:enabled="true"
+            android:exported="false"
+            android:label="RestartService"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="ACTION.RESTART.HNSEndADService" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <!--E: NEWSCREEN 설정 사항 -->
+    </application>
+
+</manifest>

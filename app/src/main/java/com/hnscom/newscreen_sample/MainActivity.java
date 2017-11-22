@@ -19,14 +19,14 @@ public class MainActivity extends AppCompatActivity {
 
         Switch hnsadSwitch = (Switch) findViewById(R.id.newscreen_switch);
 
-        hnsadSwitch.setChecked(newscreenAD.isRunningHnsAd());
+        hnsadSwitch.setChecked(newscreenAD.isRunningNewscreen());
         hnsadSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(b){
                     newscreenAD.init("d67d8ab4f4c10bf22aa353e27879133c");
                 }else{
-                    newscreenAD.StopAd();
+                    newscreenAD.stopAd();
                 }
             }
         });

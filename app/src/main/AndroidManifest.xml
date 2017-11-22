@@ -46,6 +46,7 @@
             android:process=":remote" >
             <intent-filter>
                 <action android:name="ACTION.RESTART.HNSEndADService" />
+                <action android:name="com.hnscom.hns_endad.NS_DISPLAY_DATA" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>

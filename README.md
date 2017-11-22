@@ -95,7 +95,7 @@
 
   NewscreenAD newscreenAD = new NewscreenAD(this);           //뉴스크린 정의
   newscreenAD.init("뉴스크린 담당자에게 발급받은 sdk_key");         //뉴스크린 시작
-  newscreenAD.StopAd();                                      //뉴스크린 종료
+  newscreenAD.stopAd();                                      //뉴스크린 종료
   newscreenAD.isRunningHnsAd();                              //뉴스크린 동작중인 여부 확인
   
 ...

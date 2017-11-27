@@ -61,7 +61,11 @@
 </manifest>
 ```
 
-#### `newscreen_activity.xml` 파일을 res > layout 폴더에 복사 합니다.
+#### `newscreen_activity.xml` 파일을 res > layout 폴더에 복사 합니다
+파일이름 `newscreen_activity.xml`
+WebView id `newscreen_webView`
+는 반드시 지켜져야 합니다.
+
 ```Xml
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout

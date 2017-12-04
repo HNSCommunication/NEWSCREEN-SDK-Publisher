@@ -38,21 +38,23 @@
   
         <!--S: NEWSCREEN 설정 사항 -->
         <activity
-            android:name="com.hnscom.hns_endad.AD.HNSADWebViewActivity"
+            android:name="com.tnplanet.newscreen_sdk.AD.NewscreenActivity"
             android:launchMode="singleTask"
-        />
-        <activity android:name="com.hnscom.hns_endad.AD.HNSAvoidPatternActivity" />
-        <service android:name="com.hnscom.hns_endad.Service.HNSEndADService">
+            android:excludeFromRecents="true"
+            />
+        <activity android:name="com.tnplanet.newscreen_sdk.AD.NewscreenAvoidPatternActivity" />
+        <service android:name="com.tnplanet.newscreen_sdk.Service.NewscreenService">
         </service>
-        <service android:exported="false" android:name="com.hnscom.hns_endad.Service.HNSForeGroundService" android:process=":locker" />
+        <service android:exported="false" android:name="com.tnplanet.newscreen_sdk.Service.NewscreenForeGroundService" android:process=":locker" />
         <receiver
-            android:name="com.hnscom.hns_endad.Service.HNSRestartService"
+            android:name="com.tnplanet.newscreen_sdk.Service.NewscreenRestartService"
             android:enabled="true"
             android:exported="false"
             android:label="RestartService"
             android:process=":remote" >
             <intent-filter>
-                <action android:name="ACTION.RESTART.HNSEndADService" />
+                <action android:name="ACTION.RESTART.NewscreenService" />
+                <action android:name="com.tnplanet.newscreen.NEWSCREEN_BROADCAST_DATA" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>

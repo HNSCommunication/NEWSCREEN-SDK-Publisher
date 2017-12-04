@@ -10,15 +10,13 @@
 
 ### 1. 설정
 
-#### newscreen_sample 프로젝트 또는 [`newscreen_sdk_.zip`](https://github.com/HNSCommunication/docs/raw/master/newscreen_sdk_1.0.zip) 파일을 다운로드 합니다
-- newscreen_.jar : 뉴스크린 jar 파일
-- AndroidManifest.xml : 뉴스크린 메니페스트 샘플파일
-- newscreen_activity.xml : 뉴스크린 레이아웃 파일
-- newscreen_sample.apk : 뉴스크린 샘플 apk
-- newscreen_sample_project.zip : 뉴스크린 샘플 프로젝트
+#### newscreen_sample 프로젝트를 다운로드 합니다. 아래 3개 파일을 확인합니다
+- newscreen_x.x.jar : 뉴스크린 jar 파일 (newscreen_x.x > newscreen_x.x.jar)
+- AndroidManifest.xml : 뉴스크린 메니페스트 샘플파일 (app > src > main > AndroidManifest.xml)
+- newscreen_activity.xml : 뉴스크린 레이아웃 파일 (app > src > main > res > layout > newscreen_activity.xml)
   
 
-#### 안드로이드 프로젝트에 `newscreen_.jar` 을 import 합니다
+#### 안드로이드 프로젝트에 `newscreen_x.x.jar` 을 import 합니다
 
 #### `AndroidManifest.xml` 에 다음 코드를 추가합니다.
 ```Xml
@@ -26,7 +24,6 @@
   
     <!--S:NEWSCREEN 퍼미션 설정  -->
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -64,7 +61,11 @@
 </manifest>
 ```
 
-#### `newscreen_activity.xml` 파일을 res > layout 폴더에 복사 합니다.
+#### `newscreen_activity.xml` 파일을 res > layout 폴더에 복사 합니다
+파일이름 `newscreen_activity.xml`
+WebView id `newscreen_webView`
+는 반드시 지켜져야 합니다.
+
 ```Xml
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
@@ -78,8 +79,6 @@
         android:id="@+id/newscreen_webView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
         android:background="#000000">
 
     </WebView>

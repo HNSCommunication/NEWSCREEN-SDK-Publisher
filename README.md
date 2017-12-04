@@ -1,7 +1,7 @@
 # NEWSCREEN SDK for Android
 
 * 뉴스크린을 안드로이드 어플리케이션에 연동하기 위한 라이브러리
-* 안드로이드 버전 지원 : Android 4.0.3(API Level 15) 이상
+* 안드로이드 버전 지원 : Android 4.0(API Level 14) 이상
 * 연동을 하기 위해 발급받아야 하는 키
 * `sdk_key` : 뉴스크린 담당자에게 발급 받아야합니다 ++++++++++++++++(테스트 sdk_key : d67d8ab4f4c10bf22aa353e27879133c)
 

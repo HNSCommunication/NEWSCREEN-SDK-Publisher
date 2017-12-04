@@ -5,8 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
-
-import com.hnscom.hns_endad.NewscreenAD;
+import com.tnplanet.newscreen_sdk.NewscreenAD;
 
 public class MainActivity extends AppCompatActivity {
 

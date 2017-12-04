@@ -20,7 +20,7 @@
 
 #### `build.gradle` 설정
 - `compile project(':newscreen_x.x')` 추가
-- `com.android.support:appcompat-v7:25.+`추가
+- `compile 'com.android.support:appcompat-v7:25.+'`추가
 
 앱의 minSdkVersion이 14 미만인 경우 appcompat-v7:25 이하 버전으로 컴파일 해야 합니다. (appcompat-v7:26 이상버전은 minSdkVersion 14이상 지원)
 

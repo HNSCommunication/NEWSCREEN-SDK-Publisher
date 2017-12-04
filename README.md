@@ -109,3 +109,5 @@ WebView id `newscreen_webView`
   //(테스트 sdk_key : d67d8ab4f4c10bf22aa353e27879133c)
 ...
 ```
+
+- 디버깅 후 정해진 노출 빈도수(5회, 10회, 15회) 만큼 Screen을 off 하면 뉴스크린이 호출 됩니다.

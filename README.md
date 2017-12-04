@@ -18,6 +18,11 @@
 
 #### 안드로이드 프로젝트에 `newscreen_x.x.jar` 을 import 합니다
 
+#### `build.gradle` 설정
+- `compile project(':newscreen_x.x')` 추가
+- `com.android.support:appcompat-v7:25.+`추가
+앱의 minSdkVersion이 14 미만인 경우 appcompat-v7:25 이하 버전으로 컴파일 해야 합니다. (appcompat-v7:26 이상버전은 minSdkVersion 14이상 지원)
+
 #### `AndroidManifest.xml` 에 다음 코드를 추가합니다.
 - 뉴스크린을 위한 퍼미션 설정
 - 뉴스크린 광고를 호출하기 위한 설정

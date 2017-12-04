@@ -3,7 +3,7 @@
 * 뉴스크린을 안드로이드 어플리케이션에 연동하기 위한 라이브러리
 * 안드로이드 버전 지원 : Android 4.0.3(API Level 15) 이상
 * 연동을 하기 위해 발급받아야 하는 키
-* `sdk_key` : 뉴스크린 담당자에게 받아야합니다 ++++++++++++++++(테스트 sdk_key : d67d8ab4f4c10bf22aa353e27879133c)
+* `sdk_key` : 뉴스크린 담당자에게 발급 받아야합니다 ++++++++++++++++(테스트 sdk_key : d67d8ab4f4c10bf22aa353e27879133c)
 
 
 ## 뉴스크린 SDK 연동 가이드 - 기본
@@ -19,10 +19,12 @@
 #### 안드로이드 프로젝트에 `newscreen_x.x.jar` 을 import 합니다
 
 #### `AndroidManifest.xml` 에 다음 코드를 추가합니다.
+- 뉴스크린을 위한 퍼미션 설정
+- 뉴스크린 광고를 호출하기 위한 설정
 ```Xml
 <manifest>
   
-    <!--S:NEWSCREEN 퍼미션 설정  -->
+    <!--S: NEWSCREEN 퍼미션 설정  -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -30,7 +32,7 @@
     <uses-permission android:name="android.permission.BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_SERVICE" />
-    <!--E:NEWSCREEN 퍼미션 설정  -->
+    <!--E: NEWSCREEN 퍼미션 설정  -->
     
     <application>
         ...
@@ -38,21 +40,23 @@
   
         <!--S: NEWSCREEN 설정 사항 -->
         <activity
-            android:name="com.hnscom.hns_endad.AD.HNSADWebViewActivity"
+            android:name="com.tnplanet.newscreen_sdk.AD.NewscreenActivity"
             android:launchMode="singleTask"
-        />
-        <activity android:name="com.hnscom.hns_endad.AD.HNSAvoidPatternActivity" />
-        <service android:name="com.hnscom.hns_endad.Service.HNSEndADService">
+            android:excludeFromRecents="true"
+            />
+        <activity android:name="com.tnplanet.newscreen_sdk.AD.NewscreenAvoidPatternActivity" />
+        <service android:name="com.tnplanet.newscreen_sdk.Service.NewscreenService">
         </service>
-        <service android:exported="false" android:name="com.hnscom.hns_endad.Service.HNSForeGroundService" android:process=":locker" />
+        <service android:exported="false" android:name="com.tnplanet.newscreen_sdk.Service.NewscreenForeGroundService" android:process=":locker" />
         <receiver
-            android:name="com.hnscom.hns_endad.Service.HNSRestartService"
+            android:name="com.tnplanet.newscreen_sdk.Service.NewscreenRestartService"
             android:enabled="true"
             android:exported="false"
             android:label="RestartService"
             android:process=":remote" >
             <intent-filter>
-                <action android:name="ACTION.RESTART.HNSEndADService" />
+                <action android:name="ACTION.RESTART.NewscreenService" />
+                <action android:name="com.tnplanet.newscreen.NEWSCREEN_BROADCAST_DATA" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
@@ -64,7 +68,7 @@
 #### `newscreen_activity.xml` 파일을 res > layout 폴더에 복사 합니다
 파일이름 `newscreen_activity.xml`
 WebView id `newscreen_webView`
-는 반드시 지켜져야 합니다.
+레이아웃은 반드시 지켜져야 합니다.
 
 ```Xml
 <?xml version="1.0" encoding="utf-8"?>

@@ -1,7 +1,7 @@
 # NEWSCREEN SDK for Android
 
 * 뉴스크린을 안드로이드 어플리케이션에 연동하기 위한 라이브러리
-* 안드로이드 버전 지원 : Android 4.0.3(API Level 15) 이상
+* 안드로이드 버전 지원 : Android 4.0(API Level 14) 이상
 * 연동을 하기 위해 발급받아야 하는 키
 * `sdk_key` : 뉴스크린 담당자에게 발급 받아야합니다 ++++++++++++++++(테스트 sdk_key : d67d8ab4f4c10bf22aa353e27879133c)
 
@@ -17,6 +17,12 @@
   
 
 #### 안드로이드 프로젝트에 `newscreen_x.x.jar` 을 import 합니다
+
+#### `build.gradle` 설정
+- `compile project(':newscreen_x.x')` 추가
+- `compile 'com.android.support:appcompat-v7:25.+'`추가
+
+앱의 minSdkVersion이 14 미만인 경우 appcompat-v7:25 이하 버전으로 컴파일 해야 합니다. (appcompat-v7:26 이상버전은 minSdkVersion 14이상 지원)
 
 #### `AndroidManifest.xml` 에 다음 코드를 추가합니다.
 - 뉴스크린을 위한 퍼미션 설정
@@ -103,3 +109,5 @@ WebView id `newscreen_webView`
   //(테스트 sdk_key : d67d8ab4f4c10bf22aa353e27879133c)
 ...
 ```
+
+- 디버깅 후 정해진 노출 빈도수(5회, 10회, 15회) 만큼 Screen을 off 하면 뉴스크린이 호출 됩니다.

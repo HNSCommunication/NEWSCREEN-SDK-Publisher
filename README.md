@@ -127,7 +127,7 @@
 
             <ImageView
                 android:id="@+id/notiscreen_noti_img"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:adjustViewBounds="false"
                 android:scaleType="centerCrop" />

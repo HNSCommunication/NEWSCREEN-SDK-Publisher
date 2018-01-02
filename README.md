@@ -202,6 +202,9 @@
 
 - 콜백 메시지
 'success' : 호출 성공
+
 'undefined_key' : sdk_key 오류
+
 'undefined_channel' : 뉴스크린 및 알림바 콘텐츠 노출 요청 승인이 되지 않은 상태
+
 'network_error' : 서버 연결 실패

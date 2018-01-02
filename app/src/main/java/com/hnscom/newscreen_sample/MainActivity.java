@@ -2,6 +2,7 @@ package com.hnscom.newscreen_sample;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
@@ -17,6 +18,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Switch hnsadSwitch = (Switch) findViewById(R.id.newscreen_switch);
+
+        newscreenAD.setInitCallback(new NewscreenAD.InitCallBack() {
+            @Override
+            public void initCallBack(boolean valid, String msg) {
+                Log.d("MainActivity", "콜백 : "+valid+" /"+msg);
+            }
+        });
 
         hnsadSwitch.setChecked(newscreenAD.isRunningNewscreen());
         hnsadSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

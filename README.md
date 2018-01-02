@@ -201,6 +201,7 @@
 - 디버깅 후 뉴스크린을 실행하면 알림바에 콘텐츠가 호출 됩니다.
 
 - 콜백 메시지 
+
 'success' : 호출 성공
 'undefined_key' : sdk_key 오류
 'undefined_channel' : 뉴스크린 및 알림바 콘텐츠 노출 요청 승인이 되지 않은 상태

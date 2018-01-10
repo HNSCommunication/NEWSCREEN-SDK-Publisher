@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fadeScrollbars="true">
 
+    <ProgressBar
+        android:id="@+id/newscreen_webView_progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
     <WebView
         android:id="@+id/newscreen_webView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000000">
+        android:background="#00000000">
 
     </WebView>
-</RelativeLayout>
+</LinearLayout>

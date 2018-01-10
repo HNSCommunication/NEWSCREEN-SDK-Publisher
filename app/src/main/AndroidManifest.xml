@@ -31,7 +31,6 @@
         <!--S: NEWSCREEN 설정 사항-->
         <activity
             android:name="com.tnplanet.newscreen_sdk.AD.NewscreenActivity"
-            android:excludeFromRecents="true"
             >
         </activity>
 

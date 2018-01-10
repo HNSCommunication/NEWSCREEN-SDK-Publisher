@@ -48,7 +48,6 @@
         <!--S: NEWSCREEN 설정 사항-->
         <activity
             android:name="com.tnplanet.newscreen_sdk.AD.NewscreenActivity"
-            android:excludeFromRecents="true"
         >
         </activity>
 
@@ -80,21 +79,26 @@
 
 ```Xml
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fadeScrollbars="true">
 
+    <ProgressBar
+        android:id="@+id/newscreen_webView_progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
     <WebView
         android:id="@+id/newscreen_webView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000000">
+        android:background="#00000000">
 
     </WebView>
-</RelativeLayout>
+</LinearLayout>
 
 ```
 
@@ -174,6 +178,17 @@
 </LinearLayout>
 
 ```
+
+
+#### 프로가드 처리 `proguard-rules.pro` 에 다음 코드를 추가합니다.
+```Xml
+-ignorewarnings
+
+-keep class com.tnplanet.newscreen_sdk.AD.NewscreenActivity$WebAppInterface { *; }
+-keep interface com.tnplanet.newscreen_sdk.AD.NewscreenActivity$WebAppInterface { *; }
+```
+
+
 
 ### 2. 뉴스크린 호출
 - 뉴스크린을 호출하기 위해서는 `sdk_key`를 발급 받아야 합니다.

@@ -11,12 +11,12 @@ import com.tnplanet.newscreen_sdk.NewscreenAD;
 public class MainActivity extends AppCompatActivity {
 
     private NewscreenAD newscreenAD = new NewscreenAD(MainActivity.this); //현재액티비티
+    private String sdk_key = "뉴스크린 담당자에게 발급받은 sdk_key";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Switch hnsadSwitch = (Switch) findViewById(R.id.newscreen_switch);
 
         newscreenAD.setInitCallback(new NewscreenAD.InitCallBack() {
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(b){
-                    newscreenAD.init("d67d8ab4f4c10bf22aa353e27879133c");
+                    newscreenAD.init(sdk_key);
                 }else{
                     newscreenAD.stopAd();
                 }

@@ -10,7 +10,7 @@
 
 ### 1. 설정
 
-#### newscreen_sample 프로젝트를 다운로드 합니다. 아래 3개 파일을 확인합니다
+#### newscreen_sample 프로젝트를 다운로드 합니다. 아래 4개 파일을 확인합니다
 - newscreen_x.x.jar : 뉴스크린 jar 파일 (newscreen_x.x > newscreen_x.x.jar)
 - AndroidManifest.xml : 뉴스크린 메니페스트 샘플파일 (app > src > main > AndroidManifest.xml)
 - newscreen_activity.xml : 뉴스크린 레이아웃 파일 (app > src > main > res > layout > newscreen_activity.xml)
@@ -48,7 +48,6 @@
         <!--S: NEWSCREEN 설정 사항-->
         <activity
             android:name="com.tnplanet.newscreen_sdk.AD.NewscreenActivity"
-            android:excludeFromRecents="true"
         >
         </activity>
 
@@ -80,21 +79,26 @@
 
 ```Xml
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fadeScrollbars="true">
 
+    <ProgressBar
+        android:id="@+id/newscreen_webView_progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
     <WebView
         android:id="@+id/newscreen_webView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000000">
+        android:background="#00000000">
 
     </WebView>
-</RelativeLayout>
+</LinearLayout>
 
 ```
 
@@ -175,6 +179,17 @@
 
 ```
 
+
+#### 프로가드 처리 `proguard-rules.pro` 에 다음 코드를 추가합니다.
+```Xml
+-ignorewarnings
+
+-keep class com.tnplanet.newscreen_sdk.AD.NewscreenActivity$WebAppInterface { *; }
+-keep interface com.tnplanet.newscreen_sdk.AD.NewscreenActivity$WebAppInterface { *; }
+```
+
+
+
 ### 2. 뉴스크린 호출
 - 뉴스크린을 호출하기 위해서는 `sdk_key`를 발급 받아야 합니다.
 
@@ -184,7 +199,7 @@
   NewscreenAD newscreenAD = new NewscreenAD(this);           //뉴스크린 정의
   newscreenAD.init("뉴스크린 담당자에게 발급받은 sdk_key");         //뉴스크린 시작
   newscreenAD.stopAd();                                      //뉴스크린 종료
-  newscreenAD.isRunningHnsAd();                              //뉴스크린 동작중인 여부 확인
+  newscreenAD.isRunningNewscreen();                          //뉴스크린 동작중인 여부 확인
   newscreenAD.setInitCallback(new NewscreenAD.InitCallBack() {  //뉴스크린 콜백
            @Override
             public void initCallBack(boolean valid, String msg) {

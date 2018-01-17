@@ -10,11 +10,12 @@
 
 ### 1. 설정
 
-#### newscreen_sample 프로젝트를 다운로드 합니다. 아래 4개 파일을 확인합니다
+#### newscreen_sample 프로젝트를 다운로드 합니다. 아래 5개 파일을 확인합니다
 - newscreen_x.x.jar : 뉴스크린 jar 파일 (newscreen_x.x > newscreen_x.x.jar)
 - AndroidManifest.xml : 뉴스크린 메니페스트 샘플파일 (app > src > main > AndroidManifest.xml)
 - newscreen_activity.xml : 뉴스크린 레이아웃 파일 (app > src > main > res > layout > newscreen_activity.xml)
 - notiscreen_noti_view.xml : 노티스크린(알림바) 레이아웃 파일 (app > src > main > res > layout > notiscreen_noti_view.xml)
+- notiscreen_icon.png : 노티스크린(알림바) 아이콘 파일 (app > src > main > res > drawable > notiscreen_icon.png)
 
 
 #### 안드로이드 프로젝트에 `newscreen_x.x.jar` 을 import 합니다

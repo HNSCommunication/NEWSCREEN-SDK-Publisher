@@ -9,7 +9,7 @@
 
 ## 뉴스크린 SDK 연동 가이드 - 기본
 
-### 1. 설정
+### 1. 기본파일
 
 #### newscreen_sample 프로젝트를 다운로드 합니다. 아래 5개 파일을 확인합니다
 - newscreen_x.x.jar : 뉴스크린 jar 파일 (newscreen_x.x > newscreen_x.x.jar)
@@ -18,16 +18,18 @@
 - notiscreen_noti_view.xml : 노티스크린(알림바) 레이아웃 파일 (app > src > main > res > layout > notiscreen_noti_view.xml)
 - notiscreen_icon.png : 노티스크린(알림바) 아이콘 파일 (app > src > main > res > drawable > notiscreen_icon.png)
 
+### 2. 안드로이드 프로젝트에 `newscreen_x.x.jar` 을 import 합니다
 
-#### 안드로이드 프로젝트에 `newscreen_x.x.jar` 을 import 합니다
 
-#### `build.gradle` 설정
+### 3. `build.gradle` 설정
 - `compile project(':newscreen_x.x')` 추가
 - `compile 'com.android.support:appcompat-v7:25.+'`추가
 
 앱의 minSdkVersion이 14 미만인 경우 appcompat-v7:25 이하 버전으로 컴파일 해야 합니다. (appcompat-v7:26 이상버전은 minSdkVersion 14이상 지원)
 
-#### `AndroidManifest.xml` 에 다음 코드를 추가합니다.
+
+### 4. `AndroidManifest.xml` 설정
+#### AndroidManifest.xml 에 다음 코드를 추가합니다.
 - 뉴스크린을 위한 퍼미션 설정
 - 뉴스크린 광고를 호출하기 위한 설정
 ```Xml
@@ -76,6 +78,8 @@
 </manifest>
 ```
 
+
+### 5. 레이아웃 설정
 #### `newscreen_activity.xml` 파일을 res > layout 폴더에 복사 합니다
 파일이름과 구성요소 ID는 반드시 지켜져야 합니다
 
@@ -182,7 +186,8 @@
 ```
 
 
-#### 프로가드 처리 `proguard-rules.pro` 에 다음 코드를 추가합니다.
+### 6. 프로가드 처리
+#### `proguard-rules.pro` 에 다음 코드를 추가합니다.
 ```Xml
 -ignorewarnings
 
@@ -192,7 +197,7 @@
 
 
 
-### 2. 뉴스크린 호출
+### 8. 뉴스크린 호출 (Java)
 - 뉴스크린을 호출하기 위해서는 `sdk_key`를 발급 받아야 합니다.
 
 ```Java

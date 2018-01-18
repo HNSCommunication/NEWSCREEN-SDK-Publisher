@@ -4,6 +4,7 @@
 * 안드로이드 버전 지원 : Android 2.3(API Level 9) 이상 (com.android.support:appcompat-v7 사용 필수)
 * 연동을 하기 위해 발급받아야 하는 키
 * `sdk_key` : 뉴스크린 담당자에게 발급 받아야합니다 (테스트 sdk_key : d67d8ab4f4c10bf22aa353e27879133c)
+* All WebView로 된 앱이라면 웹 스위치를 추가 할수 있습니다 ( https://github.com/HNSCommunication/NEWSCREEN_WEB_SWITCH )
 
 
 ## 뉴스크린 SDK 연동 가이드 - 기본

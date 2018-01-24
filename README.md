@@ -94,6 +94,7 @@
 
     <ProgressBar
         android:id="@+id/newscreen_webView_progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="1dp" />
 
